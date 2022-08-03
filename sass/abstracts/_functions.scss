@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "fonts" as *;
+
+@function fs($size-name) {
+  @if map.has-key($font-sizes, $size-name) {
+    @return map.get($font-sizes, $size-name);
+  } @else {
+    @error "Size does not exist yet";
+  }
+}
